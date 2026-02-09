@@ -1,1 +1,4 @@
 postgres_data/
+*.bak
+.DS_Store
+docs/
