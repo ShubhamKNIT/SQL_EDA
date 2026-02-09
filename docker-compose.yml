@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:18.1
+    environment:
+      POSTGRES_DB: DataWarehouseAnalytics
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql
+    ports:
+      - "8080:5432"
+
+volumes:
+  postgres_data:
