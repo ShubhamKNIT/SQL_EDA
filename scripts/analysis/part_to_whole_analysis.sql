@@ -19,14 +19,14 @@ SELECT
     total_sales,
     SUM(total_sales) OVER() AS overall_sales,
     CONCAT(
-        CAST(
+        ROUND(
             CAST(
                 total_sales 
                 AS NUMERIC
-            ) 
-            / SUM(total_sales) OVER()
-            AS DECIMAL(18, 4)
-        ) * 100,
+            ) / SUM(total_sales) OVER()
+            * 100,
+            2
+        ),
         ' %'
     ) AS sales_contribution
 FROM sales_by_category;
